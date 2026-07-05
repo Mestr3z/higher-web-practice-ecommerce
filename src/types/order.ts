@@ -28,12 +28,7 @@ export type OrderItem = {
 };
 
 export type OrderStatus =
-  | 'pending'
-  | 'paid'
-  | 'processing'
-  | 'shipped'
-  | 'delivered'
-  | 'cancelled';
+  'pending' | 'paid' | 'processing' | 'shipped' | 'delivered' | 'cancelled';
 
 export type PaymentMethod = 'card_online' | 'card_on_delivery' | 'cash';
 

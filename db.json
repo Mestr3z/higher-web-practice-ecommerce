@@ -497,8 +497,8 @@
         "харизма": "4"
       },
       "inStock": true,
-      "rating": 0,
-      "ratingCount": 0,
+      "rating": 4,
+      "ratingCount": 1,
       "createdAt": "2026-03-04T09:00:00Z"
     },
     {
@@ -674,6 +674,117 @@
         "phone": "+79998887766"
       },
       "createdAt": "2026-03-09T14:20:00Z"
+    },
+    {
+      "number": "ЗАКАЗ-1783023445585",
+      "userId": "8f6b1a1e-7d1d-4b2c-9c6c-1c5f3c9c1a11",
+      "status": "pending",
+      "items": [
+        {
+          "productId": "728394a5-b6c7-40c1-9d64-50e9f1021323",
+          "name": "Горец",
+          "image": "/mustashes/highlander/0.png",
+          "price": 1490,
+          "quantity": 2
+        }
+      ],
+      "totalPrice": 2980,
+      "paymentMethod": "card_online",
+      "deliveryMethod": "pickup_point",
+      "customer": {
+        "firstName": "Иван",
+        "lastName": "Петров",
+        "email": "ivan@example.com",
+        "phone": "+79991234567"
+      },
+      "createdAt": "2026-07-02T20:17:25.585Z",
+      "pickupPointId": "5a6b7c8d-9e0f-4a1b-8c2d-3e4f5a9c8001",
+      "id": "9VXW6Dw"
+    },
+    {
+      "number": "ЗАКАЗ-1783023477620",
+      "userId": "8f6b1a1e-7d1d-4b2c-9c6c-1c5f3c9c1a11",
+      "status": "pending",
+      "items": [
+        {
+          "productId": "8394a5b6-c7d8-41d2-8e75-61fa02132434",
+          "name": "Урбан",
+          "image": "/mustashes/urban/0.png",
+          "price": 590,
+          "quantity": 1
+        },
+        {
+          "productId": "728394a5-b6c7-40c1-9d64-50e9f1021323",
+          "name": "Горец",
+          "image": "/mustashes/highlander/0.png",
+          "price": 1490,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 2080,
+      "paymentMethod": "card_online",
+      "deliveryMethod": "pickup_point",
+      "customer": {
+        "firstName": "Иван",
+        "lastName": "Петров",
+        "email": "ivan@example.com",
+        "phone": "+79991234567"
+      },
+      "createdAt": "2026-07-02T20:17:57.620Z",
+      "pickupPointId": "5a6b7c8d-9e0f-4a1b-8c2d-3e4f5a9c8001",
+      "id": "T78nIQx"
+    },
+    {
+      "number": "ЗАКАЗ-1783213425653",
+      "userId": "8f6b1a1e-7d1d-4b2c-9c6c-1c5f3c9c1a11",
+      "status": "pending",
+      "items": [
+        {
+          "productId": "8394a5b6-c7d8-41d2-8e75-61fa02132434",
+          "name": "Урбан",
+          "image": "/mustashes/urban/0.png",
+          "price": 590,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 590,
+      "paymentMethod": "card_online",
+      "deliveryMethod": "pickup_point",
+      "customer": {
+        "firstName": "Иван",
+        "lastName": "Петров",
+        "email": "ivan@example.com",
+        "phone": "+79991234567"
+      },
+      "createdAt": "2026-07-05T01:03:45.653Z",
+      "pickupPointId": "5a6b7c8d-9e0f-4a1b-8c2d-3e4f5a9c8001",
+      "id": "YXnCVaJ"
+    },
+    {
+      "number": "ЗАКАЗ-1783215514971",
+      "userId": "8f6b1a1e-7d1d-4b2c-9c6c-1c5f3c9c1a11",
+      "status": "pending",
+      "items": [
+        {
+          "productId": "8394a5b6-c7d8-41d2-8e75-61fa02132434",
+          "name": "Урбан",
+          "image": "/mustashes/urban/0.png",
+          "price": 590,
+          "quantity": 2
+        }
+      ],
+      "totalPrice": 1180,
+      "paymentMethod": "card_online",
+      "deliveryMethod": "pickup_point",
+      "customer": {
+        "firstName": "Иван",
+        "lastName": "Петров",
+        "email": "ivan@example.com",
+        "phone": "+79991234567"
+      },
+      "createdAt": "2026-07-05T01:38:34.971Z",
+      "pickupPointId": "5a6b7c8d-9e0f-4a1b-8c2d-3e4f5a9c8001",
+      "id": "Etogwj6"
     }
   ],
   "ratings": [
@@ -724,6 +835,14 @@
       "userName": "Анна С.",
       "rating": 3,
       "createdAt": "2026-03-09T16:00:00Z"
+    },
+    {
+      "productId": "728394a5-b6c7-40c1-9d64-50e9f1021323",
+      "userId": "8f6b1a1e-7d1d-4b2c-9c6c-1c5f3c9c1a11",
+      "userName": "Иван П.",
+      "rating": 4,
+      "createdAt": "2026-07-02T20:33:10.711Z",
+      "id": "6eRf8is"
     }
   ],
   "pickupPoints": [
