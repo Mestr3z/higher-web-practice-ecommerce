@@ -7,11 +7,10 @@ import FilterIcon from '../assets/Filter.svg?react';
 import { FilterSidebar, MobileFilters } from '../components/catalog';
 import { ProductCard } from '../components/shared';
 import { Pagination, Select } from '../components/ui';
+import type { CatalogFilters } from '../lib/filterProducts';
 import { emptyFilters, filterProducts } from '../lib/filterProducts';
 import { searchProducts } from '../lib/searchProducts';
 import { sortProducts } from '../lib/sortProducts';
-
-import type { CatalogFilters } from '../lib/filterProducts';
 import type { ProductSort } from '../types';
 
 type ViewMode = 'grid' | 'list';

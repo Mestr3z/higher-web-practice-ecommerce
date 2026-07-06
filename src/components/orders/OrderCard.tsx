@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { formatPrice } from '../../lib/formatPrice';
-
 import type { DeliveryMethod, Order, OrderStatus, PaymentMethod } from '../../types';
 
 const STATUS_LABELS: Record<OrderStatus, string> = {
@@ -93,7 +92,7 @@ export function OrderCard({ order }: OrderCardProps) {
                 >
                   {item.name}
                 </Link>
-                <span className="text-text-secondary text-xs">Параметр 1</span>
+                <span className="text-text-secondary text-xs">{item.quantity} шт.</span>
               </div>
               <span className="text-text shrink-0 text-sm font-bold">
                 {formatPrice(item.price)}

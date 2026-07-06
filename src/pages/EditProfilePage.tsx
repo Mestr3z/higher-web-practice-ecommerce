@@ -9,13 +9,17 @@ import UserIcon from '../assets/User.svg?react';
 import { Button, FormField, Input } from '../components/ui';
 import { selectUser, setCredentials } from '../features/auth/authSlice';
 import { useAppDispatch, useAppSelector } from '../hooks/reduxHooks';
-import { isRequired, isValidEmail } from '../lib/validation';
+import { hasMinLength, isRequired, isValidEmail } from '../lib/validation';
+import type { UpdateProfilePayload } from '../types';
 
 type EditErrors = {
   firstName?: string;
   lastName?: string;
   email?: string;
+  password?: string;
 };
+
+const PASSWORD_MIN_LENGTH = 6;
 
 export function EditProfilePage() {
   const navigate = useNavigate();
@@ -26,6 +30,7 @@ export function EditProfilePage() {
   const [firstName, setFirstName] = useState(user?.firstName ?? '');
   const [lastName, setLastName] = useState(user?.lastName ?? '');
   const [email, setEmail] = useState(user?.email ?? '');
+  const [password, setPassword] = useState('');
   const [errors, setErrors] = useState<EditErrors>({});
 
   if (!user) return null;
@@ -40,15 +45,17 @@ export function EditProfilePage() {
     if (!isRequired(firstName)) nextErrors.firstName = 'Введите имя';
     if (!isRequired(lastName)) nextErrors.lastName = 'Введите фамилию';
     if (!isValidEmail(email)) nextErrors.email = 'Некорректный email';
+    if (password && !hasMinLength(password, PASSWORD_MIN_LENGTH))
+      nextErrors.password = `Минимум ${PASSWORD_MIN_LENGTH} символов`;
 
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0) return;
 
+    const changes: UpdateProfilePayload = { firstName, lastName, email };
+    if (password) changes.password = password;
+
     try {
-      const updated = await updateProfile({
-        id: user.id,
-        changes: { firstName, lastName, email },
-      }).unwrap();
+      const updated = await updateProfile({ id: user.id, changes }).unwrap();
       dispatch(setCredentials(updated));
       navigate('/profile');
     } catch {
@@ -117,6 +124,20 @@ export function EditProfilePage() {
                 onChange={(e) => {
                   setEmail(e.target.value);
                   clearError('email');
+                }}
+              />
+            </FormField>
+
+            <FormField label="Новый пароль" htmlFor="password" error={errors.password}>
+              <Input
+                id="password"
+                type="password"
+                placeholder="Оставьте пустым, чтобы не менять"
+                value={password}
+                invalid={Boolean(errors.password)}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                  clearError('password');
                 }}
               />
             </FormField>

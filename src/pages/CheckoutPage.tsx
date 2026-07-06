@@ -164,7 +164,6 @@ export function CheckoutPage() {
                 country: 'Россия',
                 city,
                 street: address,
-                house: '',
               },
             }
           : { pickupPointId }),

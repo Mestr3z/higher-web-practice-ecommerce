@@ -1,3 +1,4 @@
+import type { FormEvent } from 'react';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -8,8 +9,6 @@ import UserIcon from '../../assets/User.svg?react';
 import { selectUser } from '../../features/auth/authSlice';
 import { selectCartCount } from '../../features/cart/cartSlice';
 import { useAppSelector } from '../../hooks/reduxHooks';
-
-import type { FormEvent } from 'react';
 
 export function Header() {
   const navigate = useNavigate();

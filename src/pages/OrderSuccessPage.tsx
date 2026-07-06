@@ -3,7 +3,6 @@ import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { useGetOrderQuery, useGetPickupPointsQuery } from '../api/ordersApi';
 import { Button } from '../components/ui';
 import { formatPrice } from '../lib/formatPrice';
-
 import type { PaymentMethod } from '../types';
 
 const PAYMENT_LABELS: Record<PaymentMethod, string> = {

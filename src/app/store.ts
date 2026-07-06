@@ -1,8 +1,26 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
 import { baseApi } from '../api/baseApi';
-import authReducer, { saveUser, selectUser } from '../features/auth/authSlice';
-import cartReducer, { saveCartItems, selectCartItems } from '../features/cart/cartSlice';
+import authReducer, {
+  logout,
+  saveUser,
+  selectUser,
+  setCredentials,
+} from '../features/auth/authSlice';
+import cartReducer, {
+  clearCart,
+  saveCartItems,
+  selectCartItems,
+} from '../features/cart/cartSlice';
+
+const authListener = createListenerMiddleware();
+
+authListener.startListening({
+  matcher: (action) => setCredentials.match(action) || logout.match(action),
+  effect: (_action, api) => {
+    api.dispatch(clearCart());
+  },
+});
 
 export const store = configureStore({
   reducer: {
@@ -10,7 +28,8 @@ export const store = configureStore({
     cart: cartReducer,
     auth: authReducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(baseApi.middleware),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().prepend(authListener.middleware).concat(baseApi.middleware),
 });
 
 store.subscribe(() => {

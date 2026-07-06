@@ -6,7 +6,6 @@ import UserIcon from '../assets/User.svg?react';
 import { Button, Checkbox, FormField, Select } from '../components/ui';
 import { selectUser, setCredentials } from '../features/auth/authSlice';
 import { useAppDispatch, useAppSelector } from '../hooks/reduxHooks';
-
 import type { UpdateProfilePayload } from '../types';
 
 const LANGUAGE_OPTIONS = [

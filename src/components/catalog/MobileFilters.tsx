@@ -1,8 +1,7 @@
-import { emptyFilters, getFacetValues } from '../../lib/filterProducts';
-import { Button, Input, RadioGroup, Switch } from '../ui';
-
 import type { CatalogFilters } from '../../lib/filterProducts';
+import { emptyFilters, getFacetValues } from '../../lib/filterProducts';
 import type { Product } from '../../types';
+import { Button, Input, RadioGroup, Switch } from '../ui';
 
 type MobileFiltersProps = {
   products: Product[];

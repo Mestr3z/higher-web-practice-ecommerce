@@ -38,7 +38,7 @@ export type Address = {
   country: string;
   city: string;
   street: string;
-  house: string;
+  house?: string;
   apartment?: string;
   postalCode?: string;
 };

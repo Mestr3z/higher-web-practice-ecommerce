@@ -785,6 +785,39 @@
       "createdAt": "2026-07-05T01:38:34.971Z",
       "pickupPointId": "5a6b7c8d-9e0f-4a1b-8c2d-3e4f5a9c8001",
       "id": "Etogwj6"
+    },
+    {
+      "number": "ЗАКАЗ-1783358908644",
+      "userId": "8f6b1a1e-7d1d-4b2c-9c6c-1c5f3c9c1a11",
+      "status": "pending",
+      "items": [
+        {
+          "productId": "8394a5b6-c7d8-41d2-8e75-61fa02132434",
+          "name": "Урбан",
+          "image": "/mustashes/urban/0.png",
+          "price": 590,
+          "quantity": 1
+        },
+        {
+          "productId": "728394a5-b6c7-40c1-9d64-50e9f1021323",
+          "name": "Горец",
+          "image": "/mustashes/highlander/0.png",
+          "price": 1490,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 2080,
+      "paymentMethod": "card_online",
+      "deliveryMethod": "pickup_point",
+      "customer": {
+        "firstName": "Иван",
+        "lastName": "Петров",
+        "email": "ivan@example.com",
+        "phone": "+79991234567"
+      },
+      "createdAt": "2026-07-06T17:28:28.644Z",
+      "pickupPointId": "5a6b7c8d-9e0f-4a1b-8c2d-3e4f5a9c8001",
+      "id": "nl7V6sj"
     }
   ],
   "ratings": [

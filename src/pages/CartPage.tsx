@@ -13,9 +13,20 @@ export function CartPage() {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const entries = useAppSelector(selectCartItems);
-  const { data: products, isLoading } = useGetProductsQuery();
+  const { data: products, isLoading, isError } = useGetProductsQuery();
 
   if (isLoading) return <p className="text-text-secondary">Загрузка…</p>;
+
+  if (isError) {
+    return (
+      <div>
+        <h1 className="text-h1">Корзина</h1>
+        <div className="bg-surface text-danger mt-6 rounded-xl p-6">
+          Не удалось загрузить товары. Попробуйте обновить страницу.
+        </div>
+      </div>
+    );
+  }
 
   const cart = buildCart(entries, products ?? []);
 
